@@ -1,0 +1,96 @@
+
+input {
+    box-sizing: border-box;
+    vertical-align: middle;
+}
+
+input [text="text"] {
+    margin: 0 3px;
+    padding: 0 3px;
+    width: 140px;
+    height: 24px;
+    border: 1px solid #000;
+}
+
+input [type="button"] {
+    margin: 0 3px;
+    font: 12px/24px  "宋体";
+    height: 24px;
+}
+
+ #musicApp {
+     margin: 50px auto;
+     width: 500px;
+     padding: 20px;
+     background: #fff;
+     border: 1px solid #ccc;
+     border-radius: 10px;
+     box-shadow: 0  0 5px   #ccc ;
+}
+
+ .main {
+     width: 100%;
+     margin-top: 20px;
+     text-align: center;
+ }
+
+ header {
+     text-align: center;
+ }
+
+ .title {
+     position: relative;
+     font: bold 16px/36px "微软雅黑";
+ }
+
+ .info .align-right {
+     float: right;
+     margin-right: 60px;
+ }
+ .info {
+     font-size: 13px;
+     height: 30px;
+     line-height: 30px;
+ }
+
+ .info span {
+     float: left;
+     margin-left: 60px;
+     line-height: 40px;
+ }
+
+ .main .like {
+     background-color: #fccce4;
+ }
+ .main .selected {
+     background-color: #f6fccf;
+ }
+
+ footer {
+     padding: 0 10px;
+     margin-top: 10px;
+     font-size: 12px;
+ }
+
+ Header input {
+     margin-right: 10px;
+     border: 1px solid #000;
+ }
+
+ Footer input {
+     margin-right: 10px;
+     margin-bottom: 20px;
+ }
+
+ .addLink {
+     position: absolute;
+     right: 0;
+     top: 0;
+ }
+
+ .backLink {
+     position: absolute;
+     left: 0;
+     top: 0;
+ }
+
