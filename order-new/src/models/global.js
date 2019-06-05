@@ -1,9 +1,15 @@
 
-export default {
+export default  {
 
-  namespace: 'example',
+  namespace: 'global',
 
-  state: {},
+  state: {
+    userInfo:{
+      name:null,
+      pwd:null,
+      id:{user_id:"dsdsd"}
+    }
+  },
 
   subscriptions: {
     setup({ dispatch, history }) {  // eslint-disable-line

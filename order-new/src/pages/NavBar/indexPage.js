@@ -15,6 +15,7 @@ import { Link } from 'dva/router'
       this.handleSetSelectedKeys(this.props.location.pathname)
     }
 
+    // 处理手动输入路由后页面跟随刷新的方法
     handleSetSelectedKeys(pathname){
       const temp = pathname.split('/');
       const key = temp && temp.length < 2 ? 'home':temp[1];
@@ -70,7 +71,6 @@ import { Link } from 'dva/router'
                 <Link to="/register">注册</Link>
                 </Menu.Item>
           </Menu>
-          
         </nav>
       )
     }

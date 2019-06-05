@@ -8,7 +8,9 @@ import { Router, Switch } from 'dva/router';
 // import Login from './pages/User/Login';
 // import Register from './pages/User/Register';
 import SubRoutes from './utils/SubRoutes'
-import indexPage from './pages/Home/indexPage';
+
+// 设置私有路由开关
+const isAuthority = true; 
 
 const RouteConfig = [
   {
@@ -20,23 +22,61 @@ const RouteConfig = [
       {
         path:"/home",
         component:() => import("./pages/Home/indexPage"),
-        model:[],
-        redirect:true
+        model:[import('./models/home')],
+        redirect:true,
+        isAuthority
       },
       {
         path:"/menus",
         component:() => import("./pages/Menus/index"),
-        model:[]
+        model:[],
+        isAuthority
       },
       {
         path:"/admin",
         component:() => import("./pages/Admin/index"),
-        model:[]
+        model:[],
+        isAuthority
       },
       {
         path:"/about",
         component:() => import("./pages/About/index"),
-        model:[]
+        model:[],
+        isAuthority,
+        routes:[
+          {
+            path:"/about/history",
+            component:() => import("./pages/About/History"),
+            model:[],
+          },
+          {
+            path:"/about/delivery",
+            component:() => import("./pages/About/Delivery"),
+            model:[],
+          },
+          {
+            path:"/about/orderingguide",
+            component:() => import("./pages/About/OrderingGuide"),
+            model:[],
+          },
+          {
+            path:"/about/contact",
+            component:() => import("./pages/About/Contact"),
+            model:[],
+            routes:[
+              {
+                path:"/about/contact/phone",
+                component:() => import("./pages/About/Phone"),
+                model:[],
+              },
+              {
+                path:"/about/contact/address",
+                component:() => import("./pages/About/Address"),
+                model:[],
+              }
+            ]
+          },
+        ]
       },
       {
         path:"/login",
