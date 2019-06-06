@@ -5,27 +5,29 @@ export default  {
 
   state: {
     userInfo:{
-      name:null,
+      email:null,
       pwd:null,
-      id:{user_id:"dsdsd"}
+      key:null
     }
   },
 
-  subscriptions: {
-    setup({ dispatch, history }) {  // eslint-disable-line
-    },
-  },
+  subscriptions: {},
  
-  effects: {
-    *fetch({ payload }, { call, put }) {  // eslint-disable-line
-      yield put({ type: 'save' });
+  effects: { 
+    // dispatch
+    // 调用查看类型，获取参数调用reducers
+    *setUserInfo({ payload }, { call, put }) {  // eslint-disable-line
+      yield put({ type: 'set_userinfo' , payload });
     },
   },
 
   reducers: {
-    save(state, action) {
-      return { ...state, ...action.payload };
+    // 设置用户信息
+    set_userinfo(state, {payload}) {
+      return { ...state, userInfo:payload };
     },
   },
 
 };
+
+

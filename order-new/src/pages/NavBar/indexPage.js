@@ -1,7 +1,54 @@
 import React, {Component} from 'react'
 import style from './index.scss'
-import {Menu} from 'antd'
+import { Menu ,Dropdown, Icon } from 'antd'
 import { Link } from 'dva/router'
+
+const menus = [
+  {
+    key:'home',
+    path:'/home',
+    name:'主页'
+  },
+  {
+    key:'menus',
+    path:'/menus',
+    name:'菜单'
+  },
+  {
+    key:'admin',
+    path:'/admin',
+    name:'管理'
+  },
+  {
+    key:'about',
+    path:'/about',
+    name:'关于我们'
+  },
+  {
+    key:'providerContext',
+    path:'/providerContext',
+    name:'Context'
+  },
+  {
+    key:'childrenFunc',
+    path:'/childrenFunc',
+    name:'子组件'
+  },
+  {
+    key:'login',
+    path:'/login',
+    name:'登录',
+    className:style.login,
+    isAuthority:true
+  },
+  {
+    key:'register',
+    path:'/register',
+    name:'注册',
+    className:style.register,
+    isAuthority:true
+  },
+]
 
   export default class indexPage extends Component {
     constructor(props){
@@ -10,10 +57,17 @@ import { Link } from 'dva/router'
         selectedKeys:[],
       }
     }
-
     componentDidMount(){
       this.handleSetSelectedKeys(this.props.location.pathname)
     }
+
+    menu = (
+      <Menu>
+        <Menu.Item key="logout">
+          <span>退出</span>
+        </Menu.Item>
+      </Menu>
+    );
 
     // 处理手动输入路由后页面跟随刷新的方法
     handleSetSelectedKeys(pathname){
@@ -52,25 +106,23 @@ import { Link } from 'dva/router'
           mode="horizontal" 
           defaultSelectedKeys={["home"]}
           selectedKeys={this.state.selectedKeys}>
-              <Menu.Item key={"home"}>
-                <Link to="/home">主页</Link>
-                </Menu.Item>
-              <Menu.Item key={"menus"}>
-                <Link to="/menus">菜单</Link>
-                </Menu.Item>
-              <Menu.Item key={"admin"}>
-                <Link to="/admin">管理</Link>
-                </Menu.Item>
-              <Menu.Item key={"about"}>
-                <Link to="/about">关于我们</Link>
-                </Menu.Item>
-              <Menu.Item className={style.login} key={"login"}>
-                <Link to="/login">登录</Link>
-                </Menu.Item>
-              <Menu.Item className={style.register} key={"register"}>
-                <Link to="/register">注册</Link>
-                </Menu.Item>
+            {/* 1.过滤 是否满足 isAuthority && 是否有登录*/}
+            {menus.filter(({isAuthority})=>!(isAuthority && localStorage.key && localStorage.email))
+            .map(({key,path,className,name})=>(
+               <Menu.Item key={key} className={className}>
+               <Link to={path}>{name}</Link>
+               </Menu.Item>
+            ))}
           </Menu>
+          {/* 用户email 和退出 */}
+         {localStorage.email && localStorage.key && (
+            <Dropdown overlay={this.menu} className={style["dropdown-menu"]}>
+            <a className="ant-dropdown-link" href="#">
+              <span className={style.email}>{localStorage.email}</span>
+            <Icon className={style.icon} type="down" />
+            </a>
+          </Dropdown>
+         )}
         </nav>
       )
     }

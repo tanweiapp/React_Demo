@@ -1,0 +1,18 @@
+.wrap {
+    width:200px;
+    border:1px solid #eee;
+  }
+  ul {
+    list-style: none;
+    padding:0px;
+  }
+  .item {
+    text-align:center;
+    color:white;
+    background:gray;
+    cursor:pointer;
+  }
+  .selected {
+    color: black;
+    background: white;
+  }

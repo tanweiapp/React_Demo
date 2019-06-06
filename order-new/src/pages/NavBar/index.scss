@@ -1,3 +1,5 @@
+@import "../../scss/common.scss"; // 引入外部样式。
+
 .header{
     white-space: nowrap;
     height: 100%;
@@ -23,6 +25,24 @@
         .register{
             position: absolute;
             right: 0;
+        }
+    }
+    .dropdown-menu {
+        position: absolute;
+        right: 10px;
+        height: $header-height;
+        line-height: $header-height;
+        .email {
+          display: inline-block;
+          line-height: 1em;
+          max-width: 150px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        .icon {
+          margin-left: 5px;
+          vertical-align: 0;
         }
     }
 }

@@ -77,6 +77,14 @@ const RouteConfig = [
             ]
           },
         ]
+      },{//函数子组件
+        path:"/childrenFunc",
+        component:() => import("./pages/example/childrenFunc"),
+        model:[],
+      },{ // Provier context
+        path:"/providerContext",
+        component:() => import("./pages/example/providerContext"),
+        model:[],
       },
       {
         path:"/login",
@@ -94,12 +102,14 @@ const RouteConfig = [
 
 
 function RouterConfig({ history, app }) {
+  console.log(app);
   return (
     <Router history={history}>
       <Switch>
         {/* <Route path="/"  component={IndexPage} /> */}
         {RouteConfig.map((route,i)=>(
           //调用封装组件
+         
           <SubRoutes key={i} {...route} app ={app}/>
         ))}
       </Switch>

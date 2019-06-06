@@ -19,17 +19,16 @@ dynamic({
   component: () =>
     component().then(res=>{
       if(isAuthority){ // 是否含有路由开关
-        if(!userInfo.id){ // 是否有 userInfo.id
+        if(!localStorage.key || !localStorage.email){ // 是否有 userInfo.id
           return ()=><Redirect to="/login"/> //未登录状态重定向到登录页面中
         }
       }
        const Component = res.default || res;
-       return props => <Component {...props} app={app} userInfo={userInfo} routes={routes}/>
+       return props => <Component {...props} app={app}  routes={routes}/>
   })
 });
 
-function SubRoutes({routes,component,app,model, isAuthority,userInfo}) {
-  console.log(userInfo)
+function SubRoutes({routes, component, app, model, isAuthority, userInfo}) {
    return (
        // 封装路由组件（路由全部加载）
         // <Route render={props=><Component {...props} routes={routes}/>}/>
