@@ -1,0 +1,21 @@
+.add-btn {
+    padding: 0 5px;
+    height: 26px;
+    color: green;
+}
+
+:global {
+    .menus-table {
+        table {
+            tr {
+                th {
+                    background: none;
+                }
+                th,
+                td {
+                    padding: 10px;
+                }
+            }
+        }
+    }
+}

@@ -61,8 +61,15 @@ const menus = [
       this.handleSetSelectedKeys(this.props.location.pathname)
     }
 
+    hanleClickMenu = ({key})=> {
+      //退出
+      if(key === 'logout'){
+        window.localStorage.clear();
+        this.props.history.push('/login')
+      }
+    } 
     menu = (
-      <Menu>
+      <Menu onClick={this.hanleClickMenu}>
         <Menu.Item key="logout">
           <span>退出</span>
         </Menu.Item>
@@ -117,7 +124,7 @@ const menus = [
           {/* 用户email 和退出 */}
          {localStorage.email && localStorage.key && (
             <Dropdown overlay={this.menu} className={style["dropdown-menu"]}>
-            <a className="ant-dropdown-link" href="#">
+            <a className="ant-dropdown-link" >
               <span className={style.email}>{localStorage.email}</span>
             <Icon className={style.icon} type="down" />
             </a>
