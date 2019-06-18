@@ -4,8 +4,41 @@
     color: green;
 }
 
+.cart-btn {
+    padding:  0 5px;
+    margin-right: 5px;
+    height: 26px;
+    color: green;
+    border: none;
+    background: none;
+    color: #333;
+    &:hover,
+    &:active,
+    &:focus {
+        border: none;
+        background: none;
+        color: #000;
+    }
+    &last-of-type {
+        margin-right: 0;
+        margin-left: 5px;
+    }
+}
+
+.total-price {
+    margin-top: 10px;
+}
+
+.submit-btn {
+    width: 100%;
+}
+
 :global {
     .menus-table {
+        margin-right: 30px;
+        &.cart {
+            margin-right: 0;
+        }
         table {
             tr {
                 th {

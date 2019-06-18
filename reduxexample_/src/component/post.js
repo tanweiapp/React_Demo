@@ -12,7 +12,7 @@ import PropTypes from 'prop-types'
      componentWillReceiveProps(nextProps){
          if(nextProps.newPost){
              console.log(nextProps.newPost)
-             this.props.posts.unshift(nextProps.newPost);         
+             this.props.posts.unshift(nextProps.newPost);      // 插入到数组最前面    
             }
      }
     render() {
