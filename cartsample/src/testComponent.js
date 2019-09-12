@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import axios from 'axios'
+import React, { Component } from '../node_modules/@types/react'
+import axios from '../node_modules/axios'
 
 export default class TestComponent extends Component {
 

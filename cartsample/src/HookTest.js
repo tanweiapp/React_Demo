@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useReducer, useContext} from 'react'
+import React, { useState, useEffect, useReducer, useContext} from '../node_modules/@types/react'
 
 
 function FruitList({fruits,setFruit}) {
@@ -72,6 +72,7 @@ export default function HookTest(){
   return (
     <Context.Provider value={{fruits,dispatch}}>
     <div>
+    sssss
       <p>{fruit === '' ? '请选择喜爱的水果' : `您选择的是${fruit}`}</p>
       {/* 设置回调函数，并处理好回调回来的数据处理 */}
       <FruitAdd /> 

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from '../node_modules/@types/react'
 
 const Context = React.createContext()
 const store = {

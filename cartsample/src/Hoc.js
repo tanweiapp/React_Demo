@@ -1,4 +1,4 @@
-import React, { Component} from 'react'
+import React, { Component} from '../node_modules/@types/react'
 
 
 // 创建一个函数接收一个组件返回另一个组件

@@ -1,14 +1,15 @@
-import React from 'react';
+import React from '../node_modules/@types/react';
 import logo from './logo.svg';
 import './App.css';
 import CartSample from './cartSample'
 import CommentList from './CommentList'
-import { Button } from 'antd'
+import { Button } from '../node_modules/antd/lib'
 import Hoc from "./Hoc";
 import Composition from './Composition'
 import ContextTest from './ContextTest';
 import HookTest from './HookTest'
 import TestComponent from './testComponent';
+import KFormTest from './KForm'
 
 
 function App() {
@@ -21,8 +22,9 @@ function App() {
       {/* <Hoc name="hoc"/> */}
       {/* <Composition />
       <ContextTest /> */}
-      <HookTest />
-      <TestComponent />
+     <HookTest />
+      {/* <TestComponent />  */}
+      {/* <KFormTest/> */}
     </div>
   );
 }

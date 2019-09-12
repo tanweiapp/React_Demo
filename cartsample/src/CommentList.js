@@ -1,4 +1,4 @@
-import React, { Component, PureComponent } from 'react'
+import React, { Component, PureComponent } from '../node_modules/@types/react'
 
 export default class CommentList extends Component {
     constructor(props){

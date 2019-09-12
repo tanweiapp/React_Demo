@@ -1,4 +1,4 @@
-import React,{ component } from 'react'
+import React,{ component } from '../node_modules/@types/react'
 
 function Dialog(props) {
     const color = props.color || 'blue'
